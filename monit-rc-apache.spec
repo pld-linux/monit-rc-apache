@@ -24,7 +24,8 @@ Plik monitrc do monitorowania serwera WWW Apache.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/monit
-install %{SOURCE0} $RPM_BUILD_ROOT%{_sysconfdir}/monit
+
+install %{SOURCE0} $RPM_BUILD_ROOT%{_sysconfdir}/monit/httpd.monitrc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -34,6 +35,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 %service -q monit restart
+
+%triggerpostun -- apache < 2.2.0
+# rename monitrc to be service name like other files
+if [ -f /etc/monit/apache.monitrc.rpmsave ]; then
+	mv -f /etc/monit/httpd.monitrc{,.rpmnew}
+	mv -f /etc/monit/{apache.monitrc.rpmsave,httpd.monitrc}
+fi
 
 %files
 %defattr(644,root,root,755)
