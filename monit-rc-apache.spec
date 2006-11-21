@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/System
 Source0:	apache.monitrc
 BuildRequires:	rpmbuild(macros) >= 1.268
+Requires(post,postun):	monit
 Requires:	apache-base >= 2.2.3-8
 Requires:	monit
 BuildArch:	noarch
@@ -19,7 +20,6 @@ monitrc file for monitoring Apache web server.
 Plik monitrc do monitorowania serwera WWW Apache.
 
 %prep
-%setup -q -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
