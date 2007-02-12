@@ -1,5 +1,5 @@
 Summary:	monitrc file for monitoring Apache web server
-Summary(pl):	Plik monitrc do monitorowania serwera WWW Apache
+Summary(pl.UTF-8):   Plik monitrc do monitorowania serwera WWW Apache
 Name:		monit-rc-apache
 Version:	1.1
 Release:	1
@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 monitrc file for monitoring Apache web server.
 
-%description -l pl
+%description -l pl.UTF-8
 Plik monitrc do monitorowania serwera WWW Apache.
 
 %prep
