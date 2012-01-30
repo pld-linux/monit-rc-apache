@@ -1,4 +1,4 @@
-check process apache with pidfile /var/run/httpd.pid
+check process httpd with pidfile /var/run/httpd.pid
 	group http
 	start program = "/etc/rc.d/init.d/httpd start"
 	stop  program = "/etc/rc.d/init.d/httpd stop"
