@@ -15,7 +15,7 @@ check process apache with pidfile /var/run/httpd.pid
 	depends on apache_rc
 
 check file apache_bin with path /usr/sbin/httpd
-	group http
+	group www
 	if failed checksum then unmonitor
 	if failed permission 755 then unmonitor
 	if failed uid root then unmonitor
@@ -23,7 +23,7 @@ check file apache_bin with path /usr/sbin/httpd
 #	alert root@localhost
 
 check file apache_rc with path /etc/rc.d/init.d/httpd
-	group http
+	group www
 	if failed checksum then unmonitor
 	if failed permission 754 then unmonitor
 	if failed uid root then unmonitor
