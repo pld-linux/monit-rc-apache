@@ -2,7 +2,7 @@ Summary:	monitrc file for monitoring Apache web server
 Summary(pl.UTF-8):	Plik monitrc do monitorowania serwera WWW Apache
 Name:		monit-rc-apache
 Version:	1.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/System
 Source0:	apache.monitrc
