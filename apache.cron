@@ -4,4 +4,4 @@ MAILTO=root
 
 # needed in cases when restarts get timeout and later problem is fixed by
 # sysadmin. something needs to give a kick to get apache back to monitoring.
-#55 */3 * * * root /usr/sbin/monit monitor apache
+#55 */3 * * * root /usr/sbin/monit monitor httpd
