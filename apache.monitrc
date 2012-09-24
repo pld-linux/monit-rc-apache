@@ -1,5 +1,5 @@
 check process httpd with pidfile /var/run/httpd.pid
-	group http
+	group www
 	start program = "/etc/rc.d/init.d/httpd start"
 	stop  program = "/etc/rc.d/init.d/httpd stop"
 	if failed host 127.0.0.1 port 80
